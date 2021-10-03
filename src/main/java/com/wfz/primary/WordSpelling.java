@@ -1,5 +1,7 @@
 package com.wfz.primary;
 
+import java.util.HashMap;
+
 public class WordSpelling {
     /*
     给你一份『词汇表』（字符串数组） words 和一张『字母表』（字符串） chars。
@@ -24,6 +26,17 @@ public class WordSpelling {
      */
 
     public static void main(String[] args) {
+
+        String[] words = new String[]{"cat", "bt", "hat", "tree"};
+        String chars = "atach";
+        HashMap<Character, Integer> charsMap = new HashMap<>();
+        for (int i = 0; i <chars.length() ; i++) {
+            char c = chars.charAt(i);
+            charsMap.put(c,charsMap.getOrDefault(c,0)+1);
+        }
+
+
+
 
     }
 
