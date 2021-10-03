@@ -3,6 +3,14 @@
         a. 思路分析:
         
         b. 核心思想
+    
+    1.2 买卖股票的最佳时机2 com.wfz.primary.StockPurchase2
+    
+    1.3 两数之和 com.wfz.primary.TwoNumberSum
+    
+    1.4 拼写单词 com.wfz.primary.WordSpelling
+    
+    
 
 
 2. com.wfz.medium -- 中级水平题目
