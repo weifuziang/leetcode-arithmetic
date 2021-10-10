@@ -9,6 +9,12 @@
     1.3 两数之和 com.wfz.primary.TwoNumberSum
     
     1.4 拼写单词 com.wfz.primary.WordSpelling
+        a. 思路分析:
+        
+        b. 核心思想
+            使用hash表解决问题
+    
+    1.5 最长回文子串 com.wfz.primary.LongestPalindrome
     
     
 
