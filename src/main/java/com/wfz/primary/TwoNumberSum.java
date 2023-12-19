@@ -29,12 +29,13 @@ public class TwoNumberSum {
 
         int[] arr = new int[]{2, 7, 11, 15};
 
-        System.out.println(Arrays.toString(twoNumberSum(arr, 17)));
+//        System.out.println(Arrays.toString(twoNumberSum(arr, 17)));
+        System.out.println(Arrays.toString(twoSum(arr, 17)));
 
 
     }
 
-
+    //方法1：复杂度为n
     private static int[] twoNumberSum(int[] arr, int target) {
 
         //因为要返回的是，对应数组中的下表，因此可以选用map同时保存数据组的value 和index
@@ -56,6 +57,19 @@ public class TwoNumberSum {
 
         throw new RuntimeException("数组中不存在两数之和为: " + target);
 
+
+    }
+
+    //方法2，复杂度比较高n*n/2
+    public static  int[] twoSum(int[] nums, int target) {
+        for(int i =0; i < nums.length ; i++){
+            for(int j =i+1; j < nums.length ; j++){
+                if(nums[i]+nums[j]==target){
+                    return new int[]{i,j};
+                }
+            }
+        }
+        return null;
 
     }
 }
