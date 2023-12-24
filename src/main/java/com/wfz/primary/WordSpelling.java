@@ -25,6 +25,11 @@ public class WordSpelling {
     解释：
     可以形成字符串 "hello" 和 "world"，所以答案是 5 + 5 = 10。
 
+    W思路分析
+    1. 将字母表都放到hashmap里，且key为char，value为字母个数（getOrDefault(c,0)）;
+    2. 将每个world单词，都放到hashmap里，且key为char，value为字母个数（getOrDefault(c,0)）;
+    3. 俩个hashmap进行比较时，可以使用value的大小来比较，同时value的值记录了char个数，若个数不够，则不能拼成world；
+
 
      */
 
@@ -60,6 +65,7 @@ public class WordSpelling {
         int result = 0;
 
         for (char c : chars.toCharArray()) {
+            //此处比较巧妙，在map的value的位置放置char字母出现的次数
             charsMap.put(c, charsMap.getOrDefault(c, 0) + 1);
         }
 
@@ -69,6 +75,7 @@ public class WordSpelling {
 
             HashMap<Character, Integer> wordMap = new HashMap<>();
             for (char c : word.toCharArray()) {
+                //此处比较巧妙，在map的value的位置放置char字母出现的次数
                 wordMap.put(c, wordMap.getOrDefault(c, 0) + 1);
             }
 
