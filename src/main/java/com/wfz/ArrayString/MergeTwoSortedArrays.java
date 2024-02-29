@@ -1,5 +1,7 @@
 package com.wfz.ArrayString;
 
+import java.util.Arrays;
+
 public class MergeTwoSortedArrays {
     /**
      * 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
@@ -49,5 +51,52 @@ public class MergeTwoSortedArrays {
      */
     public static void main(String[] args) {
 
+        int[] num1= {1,3,6,0,0,0};
+        int[] num2={2,4,7};
+
+        System.out.println("start.....");
+        int[] ints = MyMergeTwoArrays(num1,3, num2,3);
+
+        System.out.println(Arrays.toString(ints));
+
+        System.out.println("end.....");
+
+
+
+    }
+
+    /**
+     * 自己的自己的
+     * @param nums1
+     * @param m
+     * @param nums2
+     * @param n
+     * @return
+     */
+    public static int[] MyMergeTwoArrays(int[] nums1, int m, int[] nums2, int n){
+
+        if (n>0){
+            for (int i = 0; i <n; i++) {
+                for (int i1 = m-1; i1 >= 0; i1--) {
+                    int next=i1+1;
+                    if (nums2[i] >= nums1[i1]){//追加完之后，直接跳出对比，因为再往前遍历，肯定是更小的元素
+                        nums1[next]=nums2[i];
+                        break;
+                    }else{//插入交换
+                        nums1[next]=nums1[i1];
+                        nums1[i1]=nums2[i];
+                    }
+                }
+                m++;
+            }
+        }
+
+        if(m==0){
+            for (int i = 0; i < nums2.length; i++) {
+                nums1[i]=nums2[i];
+            }
+
+        }
+        return nums1;
     }
 }
