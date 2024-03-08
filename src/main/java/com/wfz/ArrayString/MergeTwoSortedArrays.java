@@ -49,15 +49,27 @@ public class MergeTwoSortedArrays {
      * 进阶：你可以设计实现一个时间复杂度为 O(m + n) 的算法解决此问题吗？
      *
      */
+
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
-        int[] num1= {1,3,6,0,0,0};
-        int[] num2={2,4,7};
+        int[] num1= {1,3,6,0,0};
+        int[] num2={2,4};
+
+//        int[] num1= {0};
+//        int[] num2={2};
 
         System.out.println("start.....");
-        int[] ints = MyMergeTwoArrays(num1,3, num2,3);
+//        int[] ints = MyMergeTwoArrays(num1,3, num2,4);
+//        System.out.println(Arrays.toString(ints));
 
-        System.out.println(Arrays.toString(ints));
+
+//        int[] int2 = mergeTwoArrays(num1,0, num2,1);
+        int[] int2 = mergeTwoArrays(num1,3, num2,2);
+
+        System.out.println(Arrays.toString(int2));
 
         System.out.println("end.....");
 
@@ -66,7 +78,7 @@ public class MergeTwoSortedArrays {
     }
 
     /**
-     * 自己的自己的
+     * 自己的解题方法 ：
      * @param nums1
      * @param m
      * @param nums2
@@ -97,6 +109,37 @@ public class MergeTwoSortedArrays {
             }
 
         }
+        return nums1;
+    }
+
+    /**
+     * 竞选别人的解题方法
+     * @param nums1
+     * @param m
+     * @param nums2
+     * @param n
+     * @return
+     */
+    public static int[] mergeTwoArrays(int[] nums1 ,int m,int[] nums2,int n){
+
+        int p1=m-1;
+        int p2=n-1;
+        int index =m + n-1;
+
+            while (p1 >= 0 || p2 >= 0) {
+               if (p1 == -1){
+                   nums1[index--] =nums2[p2--];
+               } else if(p2 == -1){
+                   nums1[index--] =nums1[p1--];
+               }else if (nums1[p1] > nums2[p2]) {
+                    nums1[index--] = nums1[p1--];
+
+                } else {
+                    nums1[index--] = nums2[p2--];
+                }
+            }
+
+
         return nums1;
     }
 }
