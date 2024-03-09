@@ -1,4 +1,4 @@
-package com.wfz.ArrayString;
+package com.wfz.classicInterviewQuestion.ArrayString;
 
 import java.util.Arrays;
 
@@ -65,15 +65,10 @@ public class MergeTwoSortedArrays {
 //        int[] ints = MyMergeTwoArrays(num1,3, num2,4);
 //        System.out.println(Arrays.toString(ints));
 
-
 //        int[] int2 = mergeTwoArrays(num1,0, num2,1);
         int[] int2 = mergeTwoArrays(num1,3, num2,2);
-
         System.out.println(Arrays.toString(int2));
-
         System.out.println("end.....");
-
-
 
     }
 
@@ -107,7 +102,6 @@ public class MergeTwoSortedArrays {
             for (int i = 0; i < nums2.length; i++) {
                 nums1[i]=nums2[i];
             }
-
         }
         return nums1;
     }
