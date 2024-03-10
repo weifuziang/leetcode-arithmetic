@@ -54,6 +54,8 @@
 
          1. 二分查找需要的变量是：left mid right 因此，可以在刚开始的时候就把变量名创建好；
          2. 可以使用while(left <= right)做为循环判断的条件；
+         3. 中间元素的寻找一定是mid=（left + right）/2
+         4. 如果没有找到target，那么插入位置一定是left指定的指针值，因为left=mid+1,最后一次，没要找到一定也是mid+1，即为left
 
 
 

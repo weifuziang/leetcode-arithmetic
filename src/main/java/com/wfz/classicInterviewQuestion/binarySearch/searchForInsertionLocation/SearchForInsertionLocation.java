@@ -30,7 +30,7 @@ public class SearchForInsertionLocation {
 //        int[] nums={1,3,5,6};
         int[] nums={1,3,5,6};
 //        int[] nums={1,3,5,6};
-        int target=7;
+        int target=0;
         int i = mySearchInsert(nums, target);
         System.out.println(i);
 
@@ -62,7 +62,6 @@ public class SearchForInsertionLocation {
 
             }else{
                 right=mid -1;
-                mid=(right+left)/2;
             }
         }
         System.out.println("end.....");
