@@ -1,4 +1,4 @@
-package com.wfz.classicInterviewQuestion.removeDuplicatesInOrderedAraay;
+package com.wfz.classicInterviewQuestion.ArrayString.removeDuplicatesInOrderedAraay;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -5,10 +5,10 @@
 系统学习内容：《面试经典150道题》
 1. 数组/字符串
     
-   1.1 合并两个有序数组 com.wfz.ClassicInterviewQuestion.ArrayString.MergeTwoSortedArrays
+   1.1 合并两个有序数组 com.wfz.classicInterviewQuestion.ArrayString.mergeTwoSortedArrays.MergeTwoSortedArrays
    
         a. 思路分析
-            两个有序的队列，合并成一条队列，只需要使用双指针，依次取两个队列中的元素，谁大，则留下谁，小的下次继续比；
+            两个有序的队列，合并成一条队d'f'd'j'fa'j列，只需要使用双指针，依次取两个队列中的元素，谁大，则留下谁，小的下次继续比；
    
         b. 核心思想
             1. 双指针变量，谁被移除，则指针下移一次，没有被移除的，指针不变；
@@ -16,7 +16,7 @@
             3. while处理是：只要两个指针任意一个没有到尽头，就一直循环下去；
             4. if的处理是：区分指针不同状态下的处理逻辑；
    
-   1.2 移除元素 com.wfz.classicInterviewQuestion.removeElement.RemoveElement
+   1.2 移除元素 com.wfz.classicInterviewQuestion.ArrayString.removeElement.RemoveElement
 
         a. 思路分析：
    
@@ -28,7 +28,7 @@
             2. 紧扣题目的要求，可允许结果数组的乱序来，来促使我们找到最优解的思路；
             3. 题目虽为移除元素，实则可以只做物理删除，覆盖数组前面的元素，后面的没用的元素可以放着，不做任何处理
 
-   1.3 删除有序数组中的重复项
+   1.3 删除有序数组中的重复项 com.wfz.classicInterviewQuestion.ArrayString.removeDuplicatesInOrderedAraay.RemoveDuplicatesInOrderedAraay
 
       a. 思路分析
             
@@ -40,7 +40,21 @@
          1. 比较一个数组中两个元素的是，直接使用双指针+while；
          2. 指针p1是慢指针，若比较后的元素，不相同，则存储的位置p1+1；
          3. 指针p2是快指针,需要不停的前进，获取新的元素和慢指针p1做比较的；
-         4. 只是逻辑删除，做数组的覆盖，后面需要的元素可以继续存储在数组后面； 
+         4. 只是逻辑删除，做数组的覆盖，后面需要的元素可以继续存储在数组后面；
+
+2. 二分查找   
+   
+   2.1 搜索插入位置 com.wfz.classicInterviewQuestion.binarySearch.searchForInsertionLocation.SearchForInsertionLocation
+      
+      a. 思路分析
+
+         1. 常规的二分查找方法使用
+
+      b. 核心思想
+
+         1. 二分查找需要的变量是：left mid right 因此，可以在刚开始的时候就把变量名创建好；
+         2. 可以使用while(left <= right)做为循环判断的条件；
+
 
 
 实战面试题复盘：

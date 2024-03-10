@@ -1,4 +1,4 @@
-package com.wfz.classicInterviewQuestion.ArrayString;
+package com.wfz.classicInterviewQuestion.ArrayString.mergeTwoSortedArrays;
 
 import java.util.Arrays;
 

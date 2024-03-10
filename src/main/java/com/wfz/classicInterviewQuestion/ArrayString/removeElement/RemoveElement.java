@@ -1,4 +1,4 @@
-package com.wfz.classicInterviewQuestion.removeElement;
+package com.wfz.classicInterviewQuestion.ArrayString.removeElement;
 
 import java.util.Arrays;
 
