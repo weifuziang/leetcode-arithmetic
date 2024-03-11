@@ -17,10 +17,11 @@ public class SearchForTwoDimensionalMatrix {
      * @param args
      */
     public static void main(String[] args) {
-        int[][] matrix={{1,3,5,7},{10,11,16,20},{23,30,34,60}};
+        int[][] matrix={{1,3,5,7},{10,11,16,20},{23,30,34,60},{65,75,80,81}};
 //        int target=3;
-        int target=60;
-        System.out.println(MySearchMatrix(matrix,target));
+        int target=20;
+//        System.out.println(MySearchMatrix(matrix,target));
+        System.out.println(searchMatrix(matrix,target));
 
     }
 
@@ -76,4 +77,67 @@ public class SearchForTwoDimensionalMatrix {
 
         return false;
     }
-}
+
+
+    /**
+     * standard optimal solution : 整个矩阵从左到右递增矩阵，因此第一步，可以直接拿第一列数据，做一个二分查找，
+     * 找出一个不大于target元素的行索引，然后在此行索引的基础上，继续使用二分查找的方法去找对应的元素；
+     * 重点强调的是：在进列级别的二分查找，找到目标的行索引时，最终需要的目标行索引一定是lef-1，因为，即使在列查找中也是递增的序列；
+     * @param matrix
+     * @param target
+     * @return
+     */
+    public static boolean searchMatrix(int[][] matrix, int target) {
+
+        int rowIndex = columSearh(matrix, target);
+        System.out.println(rowIndex);
+
+       return rowSearch(matrix,rowIndex,target);
+
+    }
+
+    public static  int columSearh(int[][] matrix, int target){
+
+        int low =0;
+        int high=matrix.length-1;
+        while (low <= high){
+            int mid=((high-low)/2 +low);
+            if (matrix[mid][0] == target){
+                return mid;
+            }
+            if (matrix[mid][0] < target){
+                low=mid +1;
+            }else{
+                high=mid-1;
+            }
+        }
+
+        return low-1;
+
+
+
+    }
+
+    public static  boolean rowSearch(int[][] matrix, int rowIndex, int target){
+
+
+        int left =0;
+        int right=matrix[rowIndex].length-1;
+        while (left <= right){
+            int mid=((right-left)/2 +left);
+            if (matrix[rowIndex][mid] == target){
+                return true;
+            }
+            if (matrix[rowIndex][mid] < target){
+                left=mid +1;
+            }else{
+                right=mid-1;
+            }
+        }
+
+        return false;
+
+    }
+
+
+    }
