@@ -144,7 +144,7 @@ public class FlipList2 {
 
 
 
-        //截取子链表
+        //截取子链表(变量拉链袋啊哈哈)
         ListNode leftNode=pre.next;
         ListNode curr=rightNode.next;
 

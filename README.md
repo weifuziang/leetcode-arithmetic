@@ -58,7 +58,7 @@
          4. 如果没有找到target，那么插入位置一定是left指定的指针值，因为,在升序的数组中，left=mid+1应该是符合要求的最后一次计算；
          5. 如果是降序，那就应该是right=mid-1了；
 
-   2.2 搜索二维度矩阵
+   2.2 搜索二维度矩阵 com.wfz.classicInterviewQuestion.binarySearch.SearchForTwoDimensionalMatrix.SearchForTwoDimensionalMatrix
 
       a. 思路分析
 
@@ -81,17 +81,32 @@
 
 3. 链表
 
-      3.1 链表翻转11
+      3.1 链表翻转11 com.wfz.classicInterviewQuestion.linkList.flipList.FlipList2
 
-      a. 思路分析
-
-      b. 核心思想
-   
-      3.2 链表翻转
-      
       a. 思路分析 
+         1. 此问题是要翻转一段链表中，某一截的元素，因此，首选要做的就是先找到这一截链表的开始和结束元素的位置；
+         2. 当找到开始和结束的元素之后，我们要记录的是变量是，链表开始元素leftListNode的前一个元素pre，以及链表结束元素rightListNode，此时做的目的是为了方便截取链表；
+         3. 截取之后，做被截取链表的翻转，具体思路看《3.2 链表翻转》,截取元素操作为：pre.next=null,rightListNode.next=null,当然,在截取需要的链表之前，也要记录一下截取前后的链表，即，
+            leftListNode=pre.next,curr=rightListNode.next；
+         4. 翻转后的链表，由于没有返回新的链表名称（也没有必要，如果有新的，又需要找新链表的开始和结束的位置了），因此，此时的开始位置放的是翻转后的结束元素，
+            此时的结束位置放的是链表翻转后的开始元素（自我理解，"同位不同值"）；
+         5. 截断链表的接回操作，根据上述《4.》的思想，preListNode.next=rightListNode;leftListNode.next=curr
+
+      b. 核心思想
+         1. 链表截取再接上的思路；
+         2. 截取链表时，要记录在截取操作中，前中后各个范围段的链表；
+         3. 极端情况，为了链表的第一个元素，也能正常的参与计算，所以，我们需要在链表的开始位置模拟出来一个虚拟的元素，即，   ListNode beforeHead = new ListNode(-1);
+
+      3.2 链表翻转 com.wfz.classicInterviewQuestion.linkList.flipList.FlipList
+      
+      a. 思路分析
+         1. 需要重新命名一个变量pre=null, 然后，在该变量上做target链表的翻转操作；
+         2. 具体的翻转操作，就是需要 while 循环，需要不停的在pre前面追加元素，同时也需要pre元素不停的指向target链表的next元素；
    
       b. 核心思想
+         1. 需要另起炉灶，慢慢挨个追加;同时，也要接住next元素，来持续循环遍历;
+         2. while循环需要有动态变化的变量值持续判断，即所谓的指针curr;
+         2. pre=null ; curr=head; while(curr !=null){ next=curr.next;curr.next=pre;pre=curr;curr=next}
 
 
 
