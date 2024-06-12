@@ -107,13 +107,24 @@
          1. 需要另起炉灶，慢慢挨个追加;同时，也要接住next元素，来持续循环遍历;
          2. while循环需要有动态变化的变量值持续判断，即所谓的指针curr;
          2. pre=null ; curr=head; while(curr !=null){ next=curr.next;curr.next=pre;pre=curr;curr=next}
+   
+4. 树
+
+    4.1 二叉树的最大深度
+
+    a. 思路分析
+        从根节点开始，依次递归遍历左右子树，每次递归的深度+1，最后返回最大的深度值；
+    b. 核心思想
+       递归过程中，要深刻理解方法的入栈和出栈；
+   
+
 
 
 
 实战面试题复盘：
 1. com.wfz.primary -- 初级水平题目
    
-    1.1 买卖股票的最佳时机 com.wfz.primary.StockPurchase
+    1.1 买卖股票的最佳时机 com.wfz.primary.StockPurchase                                  
    
         a. 思路分析:
         
