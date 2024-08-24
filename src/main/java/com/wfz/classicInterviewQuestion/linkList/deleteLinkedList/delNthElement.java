@@ -30,9 +30,10 @@ public class delNthElement {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
 
-        while (listNode1 != null) {
-            System.out.println("==: "+listNode1.val);
-            listNode1 = listNode1.next;
+        ListNode listNodeTmp = listNode1;
+        while (listNodeTmp != null) {
+            System.out.println("==: "+listNodeTmp.val);
+            listNodeTmp = listNodeTmp.next;
         }
 
         ListNode listNode = new delNthElement().removeNthFromEnd(listNode1, 1);
@@ -42,6 +43,9 @@ public class delNthElement {
             listNode = listNode.next;
         }
 
+
+
+
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -49,13 +53,14 @@ public class delNthElement {
         //创建哑结点
         ListNode listNode = new ListNode(0, head);
         //获取链表的长度
-        int length = getLength(listNode);
-        for (int i = 1; i <= length; i++) {
-            if(i==length-n){//找到要删除的节点的前一个节点
-                head.next=head.next.next;
-                return listNode.next;
-            }
+        int length = getLength(head);
+        //遍历链表，并找到要删除的节点的前一个节点
+        ListNode curr = listNode;
+
+        for (int i = 1; i < length-n +1; i++) {
+            curr = curr.next;
         }
+        curr.next = curr.next.next;
         return listNode.next;
     }
 
@@ -70,7 +75,7 @@ public class delNthElement {
   private int getLength(ListNode head){
         int length=0;
         while(head !=null){
-            length++;
+            ++length;
             head=head.next;
         }
         return length;

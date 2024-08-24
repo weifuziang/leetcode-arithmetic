@@ -108,6 +108,21 @@
          2. while循环需要有动态变化的变量值持续判断，即所谓的指针curr;
          2. pre=null ; curr=head; while(curr !=null){ next=curr.next;curr.next=pre;pre=curr;curr=next}
    
+      3.3 删除链表的倒数第N个节点 com.wfz.classicInterviewQuestion.linkList.deleteLinkedList.delNthElement
+
+        a. 思路分析
+             1. 需要找到倒数第N个节点，首先需要找到链表的长度，然后，再找到倒数第N个节点；
+             2. 找到倒数第N个节点后，需要找到倒数第N个节点的前一个节点，然后，将前一个节点的next指向倒数第N个节点的next即可；
+             3. 为了方便操作，我们需要在链表的头部添加一个虚拟节点，即，ListNode beforeHead = new ListNode(-1);beforeHead.next=head;
+             4. 在进行链表循环，查找前一个节点时，我们在for循环里主要操作的就是 初始的i值，或者边界值length-n,当然具体的for循环可以是
+                for(int i=0;i<length-n;i++)或者for(int i=1;i<length-n;i++)；
+        b. 核心思想
+             1. 链表在进行循环找到目标节点时，需要记录原始的链表，因此需要重新定义一个变量，来记录原始的链表，此时新变量的链表和旧链表的变量实际上在存储空间上指向了同一个链表，
+                因此新变量指向的量表，发生了变化，旧链表也是会跟着发生变化的；
+             2. 链表循环的方式，curr=curr.next,这种方式，可以在循环中，不断的更新curr的值，来实现链表的遍历,此时只做了循环，不会对原始链表的结构造成影响；
+
+
+   
 4. 树
 
     4.1 二叉树的最大深度
