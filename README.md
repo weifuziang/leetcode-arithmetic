@@ -121,6 +121,12 @@
                 因此新变量指向的量表，发生了变化，旧链表也是会跟着发生变化的；
              2. 链表循环的方式，curr=curr.next,这种方式，可以在循环中，不断的更新curr的值，来实现链表的遍历,此时只做了循环，不会对原始链表的结构造成影响；
 
+       3.4 环形链表 com/wfz/classicInterviewQuestion/linkList/queryLinkendList/CircularLinkedListDiscovery.java
+
+         a. 思路分析
+            方法1： 1. 直接用哈希表hashset（可自动去重）来存储链表的节点，如果有重复的节点，那么就是环形链表；
+                   2. 且其中hashset的add()方法在添加的时候，如果里面有已经存在的元素，则会返回false；
+
 
    
 4. 树

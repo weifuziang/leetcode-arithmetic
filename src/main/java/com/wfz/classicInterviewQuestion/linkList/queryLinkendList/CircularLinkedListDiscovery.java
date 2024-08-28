@@ -1,5 +1,7 @@
 package com.wfz.classicInterviewQuestion.linkList.queryLinkendList;
 
+import java.util.HashSet;
+
 /**
  * 141. 环形链表
  * 给你一个链表的头节点 head ，判断链表中是否有环。
@@ -29,6 +31,28 @@ package com.wfz.classicInterviewQuestion.linkList.queryLinkendList;
 public class CircularLinkedListDiscovery {
 
     public static void main(String[] args) {
+        ListNode listNode1 = new ListNode(3);
+        ListNode listNode2 = new ListNode(2);
+        ListNode listNode3 = new ListNode(0);
+        ListNode listNode4 = new ListNode(-4);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode2;
+
+        System.out.println(new CircularLinkedListDiscovery().hasCycle(listNode1));
+
+    }
+
+    public boolean hasCycle(ListNode head){
+        HashSet<ListNode> listNodes = new HashSet<>();
+        while(head != null){
+            if(!listNodes.add(head)){
+                return true;
+            }
+            head = head.next;
+        }
+        return false;
 
     }
 
