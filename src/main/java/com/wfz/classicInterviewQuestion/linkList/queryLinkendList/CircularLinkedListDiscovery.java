@@ -40,10 +40,12 @@ public class CircularLinkedListDiscovery {
         listNode3.next = listNode4;
         listNode4.next = listNode2;
 
-        System.out.println(new CircularLinkedListDiscovery().hasCycle(listNode1));
+//        System.out.println(new CircularLinkedListDiscovery().hasCycle(listNode1));
+        System.out.println(new CircularLinkedListDiscovery().hasCycle2(listNode1));
 
     }
 
+    //方案1: 使用HashSet
     public boolean hasCycle(ListNode head){
         HashSet<ListNode> listNodes = new HashSet<>();
         while(head != null){
@@ -54,6 +56,20 @@ public class CircularLinkedListDiscovery {
         }
         return false;
 
+    }
+
+    //方案2: 快慢指针
+    public boolean hasCycle2(ListNode head){
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast !=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                return true;
+            }
+        }
+        return false;
     }
 
 }
