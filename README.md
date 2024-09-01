@@ -135,6 +135,19 @@
             2. 方法2 主要是通过快慢指针的方式，来判断链表是否有环；其中，要考虑到快慢指针只有相差一步，才一定能相遇；
                对于初始化fast和slow指针的位置，要考虑到，fast和slow指针的位置，要么在链表的头部，要么在链表的第二个元素位置，这主要取决于你用"while do" 还是"do while"循环体了；
 
+       3.5 删除排序链表中的重复元素 II com/wfz/classicInterviewQuestion/linkList/deleteLinkedList/removeDuplicateDelement.java
+       
+       a. 思路分析
+            1. 本身就是有序的链表，所以，我们可以通过比较相邻的元素，来判断是否有重复元素；
+            2. 同时要主要，该题目是要求删除链表中所有重复的元素，而不是去重；
+       
+       b. 核心思想
+            1. 相邻两个元素之间的比较，直接上while循环，然后在循环体内部，进行比较，如果有重复元素，那么就删除重复元素；
+            2. 同时还要注意一下边界条件，while(curr.next!=null && curr.next.next!=null)；,同时还有内部循环删除重复元素的条件，
+               while(curr.next!=null && curr.next.val== x)；
+            3. 对于处理删除操作的使用 curr.next=curr.next.next; 对于，没有执行删除操作的while循环，直接使用curr=curr.next,来进行链表的遍历；
+
+
 
    
 4. 树
