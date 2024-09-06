@@ -21,6 +21,26 @@ public class merginLinkedList {
 
     public static void main(String[] args) {
 
+        //创建实例1
+        ListNode listNode1 = new ListNode(1);
+        ListNode listNode2 = new ListNode(2);
+        ListNode listNode3 = new ListNode(4);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+
+        ListNode listNode = new ListNode(1);
+        ListNode listNode5 = new ListNode(3);
+        ListNode listNode6 = new ListNode(4);
+        listNode.next = listNode5;
+        listNode5.next = listNode6;
+
+
+        ListNode listNode4 = new merginLinkedList().mergeTwoLists(listNode1, listNode);
+        while (listNode4 != null) {
+            System.out.println(listNode4.val);
+            listNode4 = listNode4.next;
+        }
+
 
     }
 
@@ -35,28 +55,32 @@ public class merginLinkedList {
         if (list2 == null) {
             return list1;
         }
+
+        //创建头节点和尾节点，主要目的是head是为了返回时还知道我的脑袋在哪，tail是为了推进
         ListNode head = new ListNode();
         ListNode tail = head;
+        //双链同开循环
         while(list1 != null || list2 != null){
+
+            //单链表到头了的处理逻辑
              if(list1 == null){
                  tail.next=list2;
                   break;
              }
-                if(list2 == null){
+             if(list2 == null){
                     tail.next=list1;
                     break;
-                }
-                if(list1.val < list2.val){
+             }
+         //比较大小，小的放前面，大的放后面，并加上循环推进的循环体
+             if(list1.val < list2.val){
                     tail.next=list1;
-                    list1=list2.next;
-                }else{
+                    list1=list1.next;
+             }else{
                     tail.next=list2;
-                    list2=list1.next;
-                }
-                list1=list1.next;
-                list2=list2.next;
-                tail=tail.next.next;
-
+                    list2=list2.next;
+             }
+             //新链表的尾部推进
+            tail = tail.next;
 
         }
         return head.next;
