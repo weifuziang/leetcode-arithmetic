@@ -148,6 +148,19 @@
             3. 对于处理删除操作的使用 curr.next=curr.next.next; 对于，没有执行删除操作的while循环，直接使用curr=curr.next,来进行链表的遍历；
 
 
+       3.6  两个升序链表合并 com/wfz/classicInterviewQuestion/linkList/mergingLinkedList/merginLinkedList.java
+
+         a. 思路分析
+                1. 两个链表都是升序的，所以，我们可以直接比较两个链表的头部元素，然后，将小的元素，添加到新的链表中；
+                2. 同时，我们还要考虑到，两个链表的长度不一样，所以，我们需要在循环中，判断两个链表的长度，然后，将剩余的元素，添加到新的链表中；
+                3. 为了方便操作，我们需要在链表的头部添加一个虚拟节点，即，ListNode beforeHead = new ListNode(-1);beforeHead.next=head;
+                4. 注意在两个链表循环过程中的循环体的编写，对于已经循环完的链表要使用break直接跳出当前循环；
+        
+        b. 核心思想
+                1. 两个链表同时循环时，要用while || while循环，同时要注意循环体内部的编写，对于已经循环完的链表要使用break直接跳出当前循环；
+                2. 循环体注意两个链表长度不一样的循环体如何写，同时，还有记得新链表的循环体如何写；
+
+
 
    
 4. 树
